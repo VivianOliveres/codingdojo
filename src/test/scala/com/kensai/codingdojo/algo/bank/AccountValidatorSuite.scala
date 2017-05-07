@@ -6,20 +6,20 @@ class AccountValidatorSuite extends FunSuite with Matchers {
 
   val validator = new AccountValidator()
 
-  test("Account[345882865] should be valid") {
-    val account: Account = new Account(3, 4, 5, 8, 8, 2, 8, 6, 5)
+  test("Account[345882865] should be OK") {
+    val account: Account = new Account("345882865")
 
-    val isValid: Boolean = validator(account)
+    val isValid: AccountValidatorResult.Value = validator(account)
 
-    isValid shouldBe true
+    isValid shouldBe AccountValidatorResult.OK
   }
 
-  test("Account[345882866] should not be valid") {
-    val account: Account = new Account(3, 4, 5, 8, 8, 2, 8, 6, 6)
+  test("Account[345882866] should not be ERR") {
+    val account: Account = new Account("345882866")
 
-    val isValid: Boolean = validator(account)
+    val isValid: AccountValidatorResult.Value = validator(account)
 
-    isValid shouldBe false
+    isValid shouldBe AccountValidatorResult.ERR
   }
 
 }

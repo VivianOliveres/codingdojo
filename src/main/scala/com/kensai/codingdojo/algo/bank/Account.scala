@@ -1,14 +1,18 @@
 package com.kensai.codingdojo.algo.bank
 
-class Account(val digit1: Int,
-              val digit2: Int,
-              val digit3: Int,
-              val digit4: Int,
-              val digit5: Int,
-              val digit6: Int,
-              val digit7: Int,
-              val digit8: Int,
-              val digit9: Int) {
+class Account(val digit1: Char,
+              val digit2: Char,
+              val digit3: Char,
+              val digit4: Char,
+              val digit5: Char,
+              val digit6: Char,
+              val digit7: Char,
+              val digit8: Char,
+              val digit9: Char) {
+
+  def this(code: String) {
+    this(code.charAt(0), code.charAt(1), code.charAt(2), code.charAt(3), code.charAt(4), code.charAt(5), code.charAt(6), code.charAt(7), code.charAt(8))
+  }
 
   override def toString: String = s"Account[$digit1$digit2$digit3$digit4$digit5$digit6$digit7$digit8$digit9]"
 

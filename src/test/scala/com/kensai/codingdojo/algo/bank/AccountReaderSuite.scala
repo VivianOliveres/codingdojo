@@ -11,7 +11,7 @@ class AccountReaderSuite extends FunSuite with Matchers{
     accounts should have size 1
 
     val account: Account = accounts.head
-    account shouldEqual new Account(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    account shouldEqual new Account("123456789")
   }
 
   test("Read 2_accounts.txt") {
@@ -19,27 +19,27 @@ class AccountReaderSuite extends FunSuite with Matchers{
     accounts should have size 2
 
     val account1: Account = accounts.head
-    account1 shouldEqual new Account(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    account1 shouldEqual new Account("123456789")
 
     val account2: Account = accounts(1)
-    account2 shouldEqual new Account(0, 1, 8, 5, 6, 1, 3, 9, 7)
+    account2 shouldEqual new Account("018561397")
   }
 
   test("user_story_1.txt") {
     val accounts: List[Account] = reader.readAccount("src/test/resources/bank/user_story_1.txt")
     accounts should have size 11
 
-    accounts should contain (new Account(0, 0, 0, 0, 0, 0, 0, 0, 0))
-    accounts should contain (new Account(1, 1, 1, 1, 1, 1, 1, 1, 1))
-    accounts should contain (new Account(2, 2, 2, 2, 2, 2, 2, 2, 2))
-    accounts should contain (new Account(3, 3, 3, 3, 3, 3, 3, 3, 3))
-    accounts should contain (new Account(4, 4, 4, 4, 4, 4, 4, 4, 4))
-    accounts should contain (new Account(5, 5, 5, 5, 5, 5, 5, 5, 5))
-    accounts should contain (new Account(6, 6, 6, 6, 6, 6, 6, 6, 6))
-    accounts should contain (new Account(7, 7, 7, 7, 7, 7, 7, 7, 7))
-    accounts should contain (new Account(8, 8, 8, 8, 8, 8, 8, 8, 8))
-    accounts should contain (new Account(9, 9, 9, 9, 9, 9, 9, 9, 9))
-    accounts should contain (new Account(1, 2, 3, 4, 5, 6, 7, 8, 9))
+    accounts should contain (new Account("000000000"))
+    accounts should contain (new Account("111111111"))
+    accounts should contain (new Account("222222222"))
+    accounts should contain (new Account("333333333"))
+    accounts should contain (new Account("444444444"))
+    accounts should contain (new Account("555555555"))
+    accounts should contain (new Account("666666666"))
+    accounts should contain (new Account("777777777"))
+    accounts should contain (new Account("888888888"))
+    accounts should contain (new Account("999999999"))
+    accounts should contain (new Account("123456789"))
   }
 
 }
